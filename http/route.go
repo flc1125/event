@@ -8,6 +8,6 @@ import (
 
 func init() {
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
+		return c.Render(http.StatusOK, "hello", "World")
 	})
 }
