@@ -1,13 +1,17 @@
 package http
 
 import (
-	"net/http"
-
-	"github.com/labstack/echo/v4"
+	"github.com/gin-gonic/gin"
 )
 
 func init() {
-	e.GET("/", func(c echo.Context) error {
-		return c.Render(http.StatusOK, "hello", "World")
+	api()
+}
+
+func api() {
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
 	})
 }
