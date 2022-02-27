@@ -1,7 +1,7 @@
 package http
 
 import (
-	"github.com/gin-gonic/gin"
+	"github.com/flc1125/event/http/controller"
 )
 
 func init() {
@@ -9,9 +9,9 @@ func init() {
 }
 
 func api() {
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	api := engine.Group("/api")
+
+	apiController := &controller.ApiController{}
+
+	api.GET("/ping", apiController.Ping)
 }
