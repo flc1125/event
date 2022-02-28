@@ -11,7 +11,5 @@ func init() {
 func api() {
 	api := engine.Group("/api")
 
-	apiController := &controller.ApiController{}
-
-	api.GET("/ping", apiController.Ping)
+	api.GET("/ping", controller.ApiController.Ping)
 }

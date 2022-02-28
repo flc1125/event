@@ -4,9 +4,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type ApiController struct{}
+var ApiController = &apiController{}
 
-func (this *ApiController) Ping(c *gin.Context) {
+type apiController struct{}
+
+func (this *apiController) Ping(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"message": "pong",
 	})
