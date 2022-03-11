@@ -2,6 +2,7 @@ package bootstrap
 
 import (
 	"fmt"
+	"github.com/flc1125/event/app/model"
 	"github.com/flc1125/event/pkg/database"
 )
 
@@ -39,12 +40,15 @@ func init() {
 	})
 
 	var (
-		tests   Tests
-		article Article
+		tests Tests
+		//article Article
 	)
 	database.Connect("default").DB.First(&tests)
-	fmt.Println(tests)
+	//fmt.Println(tests)
 
 	//database.Connect("8591").DB.Table("article").First(&article)
-	fmt.Println(article)
+	//fmt.Println(article)
+	var t model.Tests
+	database.Connect("default").DB.First(&t)
+	fmt.Println(t)
 }

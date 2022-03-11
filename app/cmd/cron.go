@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/flc1125/event/cron"
+	"github.com/flc1125/event/app/cron"
 	"github.com/spf13/cobra"
 )
 

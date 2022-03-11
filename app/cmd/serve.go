@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/flc1125/event/http"
+	"github.com/flc1125/event/app/http"
 	"github.com/spf13/cobra"
 )
 

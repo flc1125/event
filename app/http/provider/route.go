@@ -1,7 +1,7 @@
-package http
+package provider
 
 import (
-	"github.com/flc1125/event/http/controller"
+	"github.com/flc1125/event/app/http/controller"
 )
 
 func init() {
@@ -9,7 +9,7 @@ func init() {
 }
 
 func api() {
-	api := engine.Group("/api")
+	api := Engine.Group("/api")
 
 	api.GET("/ping", controller.ApiController.Ping)
 }
